@@ -1,0 +1,9 @@
+{
+  "name": "eventos-arreglos",
+  "version": "1.0.0",
+  "description": "Sistema de eventos con arreglos (sin base de datos)",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  }
+}
