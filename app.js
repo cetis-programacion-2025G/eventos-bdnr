@@ -3,10 +3,11 @@ const { limpiarPantalla, titulo } = require('./utils/ui');
 const { pedirEntero }      = require('./utils/input');
 const { menuEventos }      = require('./pantallas/eventos/menuEventos');
 const { menuAsistentes }   = require('./pantallas/asistentes/menuAsistentes');
-// TODO: const { conectar } = require('./conexion');
+const { conectar } = require('./conexion');
 
 async function main() {
-    // TODO: const { cliente, db } = await conectar();
+    const { cliente, db } = await conectar();
+
     const datos = datosIniciales();
     let salir = false;
     while (!salir) {
@@ -25,7 +26,7 @@ async function main() {
             case 0: salir = true; break;
         }
     }
-    // TODO: await cliente.close();
+    await cliente.close();
     console.log('\nHasta luego.\n');
 }
 
