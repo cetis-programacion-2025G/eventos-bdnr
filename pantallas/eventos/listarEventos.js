@@ -1,14 +1,14 @@
 const { obtenerEventos } = require('../../db/eventos/obtenerEventos');
 const { dibujarTabla, titulo } = require('../../utils/ui');
 
-async function listarEventos(datos) {
-    const eventos = await obtenerEventos(datos);
+async function listarEventos(datos, db) {
+    const eventos = await obtenerEventos(db);
     const filas = eventos.map(e => ({
         ...e,
         disponibles: e.capacidad - e.boletos_vendidos <= 0 ? 'Agotado' : e.capacidad - e.boletos_vendidos,
     }));
     const columnas = [
-        { titulo: 'ID',          clave: 'id',              ancho: 4  },
+        { titulo: 'ID',          clave: '_id',              ancho: 4  },
         { titulo: 'Nombre',      clave: 'nombre',           ancho: 22 },
         { titulo: 'Fecha',       clave: 'fecha',            ancho: 10 },
         { titulo: 'Lugar',       clave: 'lugar',            ancho: 20 },

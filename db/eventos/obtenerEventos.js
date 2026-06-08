@@ -1,6 +1,5 @@
-// TODO (MongoDB): db.collection('eventos').find().sort({ fecha: 1 }).toArray()
-async function obtenerEventos(datos) {
-    return datos.eventos;
+async function obtenerEventos(db) {
+   return await db.collection('eventos').find().toArray();   
 }
 
 module.exports = { obtenerEventos };
