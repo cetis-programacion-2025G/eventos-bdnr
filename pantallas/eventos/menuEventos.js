@@ -5,7 +5,7 @@ const { agregarEvento } = require('./agregarEvento');
 const { editarEvento }  = require('./editarEvento');
 const { eliminarEvento } = require('./eliminarEvento');
 
-async function menuEventos(datos, db) {
+async function menuEventos(db) {
     let salir = false;
     while (!salir) {
         limpiarPantalla();
@@ -20,10 +20,10 @@ async function menuEventos(datos, db) {
         console.log('─'.repeat(102));
         const op = await pedirEntero('Opcion', [0, 1, 2, 3, 4]);
         switch (op) {
-            case 1: await listarEventos(datos, db);  await esperarEnter(); break;
-            case 2: await agregarEvento(datos);  await esperarEnter(); break;
-            case 3: await editarEvento(datos);   await esperarEnter(); break;
-            case 4: await eliminarEvento(datos); await esperarEnter(); break;
+            case 1: await listarEventos(db);  await esperarEnter(); break;
+            case 2: await agregarEvento(db);  await esperarEnter(); break;
+            case 3: await editarEvento(db);   await esperarEnter(); break;
+            case 4: await eliminarEvento(db); await esperarEnter(); break;
             case 0: salir = true; break;
         }
     }
