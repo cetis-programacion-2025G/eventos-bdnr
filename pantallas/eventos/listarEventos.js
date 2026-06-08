@@ -1,7 +1,7 @@
 const { obtenerEventos } = require('../../db/eventos/obtenerEventos');
 const { dibujarTabla, titulo } = require('../../utils/ui');
 
-async function listarEventos(datos, db) {
+async function listarEventos(db) {
     const eventos = await obtenerEventos(db);
     const filas = eventos.map(e => ({
         ...e,
