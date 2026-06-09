@@ -21,8 +21,8 @@ async function main() {
         console.log('─'.repeat(46));
         const op = await pedirEntero('Opcion', [0, 1, 2]);
         switch (op) {
-            case 1: await menuEventos(datos, db);    break;
-            case 2: await menuAsistentes(datos, db); break;
+            case 1: await menuEventos(db);    break;
+            case 2: await menuAsistentes(db); break;
             case 0: salir = true; break;
         }
     }
