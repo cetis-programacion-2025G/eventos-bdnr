@@ -1,5 +1,5 @@
-const { insertarEvento }                   = require('../../db/eventos/insertarEvento');
-const { preguntar, esperarEnter }                        = require('../../utils/input');
+const { insertarEvento }                    = require('../../db/eventos/insertarEvento');
+const { preguntar, esperarEnter }           = require('../../utils/input');
 const { titulo: tituloUI, limpiarPantalla } = require('../../utils/ui');
 
 async function agregarEvento(db) {
