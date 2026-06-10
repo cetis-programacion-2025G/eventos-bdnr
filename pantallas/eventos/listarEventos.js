@@ -20,6 +20,8 @@ async function listarEventos(db) {
     console.log('');
     titulo('LISTA DE EVENTOS', 100);
     dibujarTabla(filas, columnas);
+
+    return filas;
 }
 
 module.exports = { listarEventos };
